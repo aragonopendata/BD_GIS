@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+   version="2.4">
+
+  <display-name>Welcome to Tomcat</display-name>
+  <description>
+     Welcome to Tomcat
+	</description>
+
+  <servlet>
+    <servlet-name>fileSave</servlet-name>
+    <servlet-class>es.ideariumConsultores.util.FileSaveServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>fileSave</servlet-name>
+    <url-pattern>/fileSave</url-pattern>
+  </servlet-mapping>
+
+<!--  Descriptores de despliegue de Data Sources -->
+  <servlet>
+	      <servlet-name>conexOracleSita</servlet-name>
+         <servlet-class>conexOracleSita</servlet-class>
+	</servlet>
+	<servlet>
+	      <servlet-name>conexOracleBoz</servlet-name>
+         <servlet-class>conexOracleBoz</servlet-class>
+	</servlet>
+<!--
+  Descriptores de despliegue de un servlet al contenedor de servlets
+  -->
+  
+	  <servlet>
+				<servlet-name>ConsultaOracle</servlet-name>
+         <servlet-class>ConsultaOracle</servlet-class>
+   </servlet>
+	 <servlet>
+				<servlet-name>ConsultaOracleDes</servlet-name>
+         <servlet-class>ConsultaOracleDes</servlet-class>
+   </servlet>
+	 <servlet>
+				<servlet-name>conexionOracle</servlet-name>
+         <servlet-class>conexion.conexionOracle</servlet-class>
+   </servlet>
+	 <servlet>
+				<servlet-name>conexionOracleDes</servlet-name>
+         <servlet-class>conexion.conexionOracleDes</servlet-class>
+   </servlet>
+	 
+	<!--  Descriptores de despliegue de Data Sources -->
+	<servlet-mapping>
+	        <servlet-name>conexOracleSita</servlet-name>
+          <url-pattern>/conexOracleSita</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	        <servlet-name>conexOracleBoz</servlet-name>
+          <url-pattern>/conexOracleBoz</url-pattern>
+	</servlet-mapping>	
+ <!--
+   Descriptores de mapeo de un servlet al contenedor de servlets
+   -->  
+	 
+	 <servlet-mapping>
+				<servlet-name>ConsultaOracle</servlet-name>
+          <url-pattern>/consultaOracle</url-pattern>
+	 </servlet-mapping>
+	 <servlet-mapping>
+				<servlet-name>ConsultaOracleDes</servlet-name>
+          <url-pattern>/consultaOracleDes</url-pattern>
+	 </servlet-mapping>
+	 <servlet-mapping>
+				<servlet-name>conexionOracle</servlet-name>
+          <url-pattern>/conexionOracle</url-pattern>
+	 </servlet-mapping>
+	 <servlet-mapping>
+				<servlet-name>conexionOracleDes</servlet-name>
+          <url-pattern>/conexionOracleDes</url-pattern>
+	 </servlet-mapping>
+
+<!--  Conexion a sita2 -->
+<resource-ref>
+ <description>Oracle Datasource Servidor Sita</description>
+ <res-ref-name>jdbc/conexOracleSita</res-ref-name>
+ <res-type>javax.sql.DataSource</res-type>
+ <res-auth>Container</res-auth>
+</resource-ref>
+
+<!--  Conexion a boz -->
+<resource-ref>
+ <description>Oracle Datasource Servidor Boz</description>
+ <res-ref-name>jdbc/conexOracleBoz</res-ref-name>
+ <res-type>javax.sql.DataSource</res-type>
+ <res-auth>Container</res-auth>
+</resource-ref>
+
+</web-app>
+
+
+		 

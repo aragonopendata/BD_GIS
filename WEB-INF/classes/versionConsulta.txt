@@ -1,0 +1,361 @@
+Compiled from "ConsultaOracle.java"
+public class ConsultaOracle extends javax.servlet.http.HttpServlet
+  SourceFile: "ConsultaOracle.java"
+  minor version: 0
+  major version: 0
+  Constant pool:
+const #1 = Method	#39.#54;	//  javax/servlet/http/HttpServlet."<init>":()V
+const #2 = Method	#39.#55;	//  javax/servlet/http/HttpServlet.init:(Ljavax/servlet/ServletConfig;)V
+const #3 = String	#56;	//  jdbc:oracle:thin:@url:puerto:base_datos
+const #4 = String	#57;	//  revisor
+const #5 = String	#58;	//  cinta
+const #6 = String	#59;	//  text/html
+const #7 = InterfaceMethod	#60.#61;	//  javax/servlet/http/HttpServletResponse.setContentType:(Ljava/lang/String;)V
+const #8 = InterfaceMethod	#60.#62;	//  javax/servlet/http/HttpServletResponse.getWriter:()Ljava/io/PrintWriter;
+const #9 = String	#63;	//  oracle.jdbc.driver.OracleDriver
+const #10 = Method	#64.#65;	//  java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+const #11 = Method	#66.#67;	//  java/sql/DriverManager.getConnection:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
+const #12 = InterfaceMethod	#68.#69;	//  java/sql/Connection.createStatement:(II)Ljava/sql/Statement;
+const #13 = String	#70;	//  tabla
+const #14 = InterfaceMethod	#71.#72;	//  javax/servlet/http/HttpServletRequest.getParameter:(Ljava/lang/String;)Ljava/lang/String;
+const #15 = class	#73;	//  StringBuffer
+const #16 = Method	#15.#54;	//  java/lang/StringBuffer."<init>":()V
+const #17 = String	#74;	//  SELECT * FROM 
+const #18 = Method	#15.#75;	//  java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+const #19 = Method	#15.#76;	//  java/lang/StringBuffer.toString:()Ljava/lang/String;
+const #20 = InterfaceMethod	#77.#78;	//  java/sql/Statement.executeQuery:(Ljava/lang/String;)Ljava/sql/ResultSet;
+const #21 = String	#79;	//  <html>\n <body>
+const #22 = Method	#80.#81;	//  java/io/PrintWriter.println:(Ljava/lang/String;)V
+const #23 = InterfaceMethod	#82.#83;	//  java/sql/ResultSet.next:()Z
+const #24 = String	#84;	//  contenido
+const #25 = InterfaceMethod	#82.#85;	//  java/sql/ResultSet.getString:(Ljava/lang/String;)Ljava/lang/String;
+const #26 = String	#86;	//  <br>
+const #27 = String	#87;	//  </body>
+const #28 = String	#88;	//  </html>
+const #29 = class	#89;	//  ClassNotFoundException
+const #30 = String	#90;	//  No encuentro el driver de la BD: 
+const #31 = Method	#29.#91;	//  java/lang/ClassNotFoundException.getMessage:()Ljava/lang/String;
+const #32 = class	#92;	//  SQLException
+const #33 = String	#93;	//  Fallo en SQL: 
+const #34 = Method	#32.#91;	//  java/sql/SQLException.getMessage:()Ljava/lang/String;
+const #35 = InterfaceMethod	#68.#94;	//  java/sql/Connection.close:()V
+const #36 = String	#95;	//  Fallo al desconectar SQL: 
+const #37 = Method	#38.#96;	//  ConsultaOracle.doGet:(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V
+const #38 = class	#97;	//  ConsultaOracle
+const #39 = class	#98;	//  HttpServlet
+const #40 = Asciz	<init>;
+const #41 = Asciz	()V;
+const #42 = Asciz	Code;
+const #43 = Asciz	LineNumberTable;
+const #44 = Asciz	init;
+const #45 = Asciz	(Ljavax/servlet/ServletConfig;)V;
+const #46 = Asciz	Exceptions;
+const #47 = class	#99;	//  ServletException
+const #48 = Asciz	doGet;
+const #49 = Asciz	(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V;
+const #50 = class	#100;	//  IOException
+const #51 = Asciz	doPost;
+const #52 = Asciz	SourceFile;
+const #53 = Asciz	ConsultaOracle.java;
+const #54 = NameAndType	#40:#41;//  "<init>":()V
+const #55 = NameAndType	#44:#45;//  init:(Ljavax/servlet/ServletConfig;)V
+const #56 = Asciz	jdbc:oracle:thin:@url:puerto:base_datos;
+const #57 = Asciz	revisor;
+const #58 = Asciz	cinta;
+const #59 = Asciz	text/html;
+const #60 = class	#101;	//  HttpServletResponse
+const #61 = NameAndType	#102:#103;//  setContentType:(Ljava/lang/String;)V
+const #62 = NameAndType	#104:#105;//  getWriter:()Ljava/io/PrintWriter;
+const #63 = Asciz	oracle.jdbc.driver.OracleDriver;
+const #64 = class	#106;	//  Class
+const #65 = NameAndType	#107:#108;//  forName:(Ljava/lang/String;)Ljava/lang/Class;
+const #66 = class	#109;	//  DriverManager
+const #67 = NameAndType	#110:#111;//  getConnection:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
+const #68 = class	#112;	//  Connection
+const #69 = NameAndType	#113:#114;//  createStatement:(II)Ljava/sql/Statement;
+const #70 = Asciz	tabla;
+const #71 = class	#115;	//  HttpServletRequest
+const #72 = NameAndType	#116:#117;//  getParameter:(Ljava/lang/String;)Ljava/lang/String;
+const #73 = Asciz	java/lang/StringBuffer;
+const #74 = Asciz	SELECT * FROM ;
+const #75 = NameAndType	#118:#119;//  append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+const #76 = NameAndType	#120:#121;//  toString:()Ljava/lang/String;
+const #77 = class	#122;	//  Statement
+const #78 = NameAndType	#123:#124;//  executeQuery:(Ljava/lang/String;)Ljava/sql/ResultSet;
+const #79 = Asciz	<html>\n <body>;
+const #80 = class	#125;	//  PrintWriter
+const #81 = NameAndType	#126:#103;//  println:(Ljava/lang/String;)V
+const #82 = class	#127;	//  ResultSet
+const #83 = NameAndType	#128:#129;//  next:()Z
+const #84 = Asciz	contenido;
+const #85 = NameAndType	#130:#117;//  getString:(Ljava/lang/String;)Ljava/lang/String;
+const #86 = Asciz	<br>;
+const #87 = Asciz	</body>;
+const #88 = Asciz	</html>;
+const #89 = Asciz	java/lang/ClassNotFoundException;
+const #90 = Asciz	No encuentro el driver de la BD: ;
+const #91 = NameAndType	#131:#121;//  getMessage:()Ljava/lang/String;
+const #92 = Asciz	java/sql/SQLException;
+const #93 = Asciz	Fallo en SQL: ;
+const #94 = NameAndType	#132:#41;//  close:()V
+const #95 = Asciz	Fallo al desconectar SQL: ;
+const #96 = NameAndType	#48:#49;//  doGet:(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V
+const #97 = Asciz	ConsultaOracle;
+const #98 = Asciz	javax/servlet/http/HttpServlet;
+const #99 = Asciz	javax/servlet/ServletException;
+const #100 = Asciz	java/io/IOException;
+const #101 = Asciz	javax/servlet/http/HttpServletResponse;
+const #102 = Asciz	setContentType;
+const #103 = Asciz	(Ljava/lang/String;)V;
+const #104 = Asciz	getWriter;
+const #105 = Asciz	()Ljava/io/PrintWriter;;
+const #106 = Asciz	java/lang/Class;
+const #107 = Asciz	forName;
+const #108 = Asciz	(Ljava/lang/String;)Ljava/lang/Class;;
+const #109 = Asciz	java/sql/DriverManager;
+const #110 = Asciz	getConnection;
+const #111 = Asciz	(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;;
+const #112 = Asciz	java/sql/Connection;
+const #113 = Asciz	createStatement;
+const #114 = Asciz	(II)Ljava/sql/Statement;;
+const #115 = Asciz	javax/servlet/http/HttpServletRequest;
+const #116 = Asciz	getParameter;
+const #117 = Asciz	(Ljava/lang/String;)Ljava/lang/String;;
+const #118 = Asciz	append;
+const #119 = Asciz	(Ljava/lang/String;)Ljava/lang/StringBuffer;;
+const #120 = Asciz	toString;
+const #121 = Asciz	()Ljava/lang/String;;
+const #122 = Asciz	java/sql/Statement;
+const #123 = Asciz	executeQuery;
+const #124 = Asciz	(Ljava/lang/String;)Ljava/sql/ResultSet;;
+const #125 = Asciz	java/io/PrintWriter;
+const #126 = Asciz	println;
+const #127 = Asciz	java/sql/ResultSet;
+const #128 = Asciz	next;
+const #129 = Asciz	()Z;
+const #130 = Asciz	getString;
+const #131 = Asciz	getMessage;
+const #132 = Asciz	close;
+
+{
+public ConsultaOracle();
+  Code:
+   Stack=1, Locals=1, Args_size=1
+   0:	aload_0
+   1:	invokespecial	#1; //Method javax/servlet/http/HttpServlet."<init>":()V
+   4:	return
+  LineNumberTable: 
+   line 6: 0
+
+public void init(javax.servlet.ServletConfig);
+   throws javax/servlet/ServletException
+  Code:
+   Stack=2, Locals=2, Args_size=2
+   0:	aload_0
+   1:	aload_1
+   2:	invokespecial	#2; //Method javax/servlet/http/HttpServlet.init:(Ljavax/servlet/ServletConfig;)V
+   5:	return
+  LineNumberTable: 
+   line 10: 0
+   line 11: 5
+  Exceptions: 
+   throws javax/servlet/ServletException
+
+public void doGet(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse);
+   throws javax/servlet/ServletException, java/io/IOException
+  Code:
+   Stack=4, Locals=14, Args_size=3
+   0:	aconst_null
+   1:	astore_3
+   2:	aconst_null
+   3:	astore	4
+   5:	aconst_null
+   6:	astore	5
+   8:	ldc	#3; //String jdbc:oracle:thin:@url:puerto:base_datos
+   10:	astore	6
+   12:	ldc	#4; //String revisor
+   14:	astore	7
+   16:	ldc	#5; //String cinta
+   18:	astore	8
+   20:	aload_2
+   21:	ldc	#6; //String text/html
+   23:	invokeinterface	#7,  2; //InterfaceMethod javax/servlet/http/HttpServletResponse.setContentType:(Ljava/lang/String;)V
+   28:	aload_2
+   29:	invokeinterface	#8,  1; //InterfaceMethod javax/servlet/http/HttpServletResponse.getWriter:()Ljava/io/PrintWriter;
+   34:	astore	9
+   36:	ldc	#9; //String oracle.jdbc.driver.OracleDriver
+   38:	invokestatic	#10; //Method java/lang/Class.forName:(Ljava/lang/String;)Ljava/lang/Class;
+   41:	pop
+   42:	aload	6
+   44:	aload	7
+   46:	aload	8
+   48:	invokestatic	#11; //Method java/sql/DriverManager.getConnection:(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;
+   51:	astore_3
+   52:	aload_3
+   53:	sipush	1005
+   56:	sipush	1007
+   59:	invokeinterface	#12,  3; //InterfaceMethod java/sql/Connection.createStatement:(II)Ljava/sql/Statement;
+   64:	astore	4
+   66:	aload_1
+   67:	ldc	#13; //String tabla
+   69:	invokeinterface	#14,  2; //InterfaceMethod javax/servlet/http/HttpServletRequest.getParameter:(Ljava/lang/String;)Ljava/lang/String;
+   74:	astore	10
+   76:	aload	4
+   78:	new	#15; //class StringBuffer
+   81:	dup
+   82:	invokespecial	#16; //Method java/lang/StringBuffer."<init>":()V
+   85:	ldc	#17; //String SELECT * FROM 
+   87:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   90:	aload	10
+   92:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   95:	invokevirtual	#19; //Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+   98:	invokeinterface	#20,  2; //InterfaceMethod java/sql/Statement.executeQuery:(Ljava/lang/String;)Ljava/sql/ResultSet;
+   103:	astore	5
+   105:	aload	9
+   107:	ldc	#21; //String <html>\n <body>
+   109:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   112:	aload	5
+   114:	invokeinterface	#23,  1; //InterfaceMethod java/sql/ResultSet.next:()Z
+   119:	ifeq	157
+   122:	aload	9
+   124:	new	#15; //class StringBuffer
+   127:	dup
+   128:	invokespecial	#16; //Method java/lang/StringBuffer."<init>":()V
+   131:	aload	5
+   133:	ldc	#24; //String contenido
+   135:	invokeinterface	#25,  2; //InterfaceMethod java/sql/ResultSet.getString:(Ljava/lang/String;)Ljava/lang/String;
+   140:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   143:	ldc	#26; //String <br>
+   145:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   148:	invokevirtual	#19; //Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+   151:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   154:	goto	112
+   157:	aload	9
+   159:	ldc	#27; //String </body>
+   161:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   164:	aload	9
+   166:	ldc	#28; //String </html>
+   168:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   171:	jsr	257
+   174:	goto	304
+   177:	astore	10
+   179:	aload	9
+   181:	new	#15; //class StringBuffer
+   184:	dup
+   185:	invokespecial	#16; //Method java/lang/StringBuffer."<init>":()V
+   188:	ldc	#30; //String No encuentro el driver de la BD: 
+   190:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   193:	aload	10
+   195:	invokevirtual	#31; //Method java/lang/ClassNotFoundException.getMessage:()Ljava/lang/String;
+   198:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   201:	invokevirtual	#19; //Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+   204:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   207:	jsr	257
+   210:	goto	304
+   213:	astore	10
+   215:	aload	9
+   217:	new	#15; //class StringBuffer
+   220:	dup
+   221:	invokespecial	#16; //Method java/lang/StringBuffer."<init>":()V
+   224:	ldc	#33; //String Fallo en SQL: 
+   226:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   229:	aload	10
+   231:	invokevirtual	#34; //Method java/sql/SQLException.getMessage:()Ljava/lang/String;
+   234:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   237:	invokevirtual	#19; //Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+   240:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   243:	jsr	257
+   246:	goto	304
+   249:	astore	11
+   251:	jsr	257
+   254:	aload	11
+   256:	athrow
+   257:	astore	12
+   259:	aload_3
+   260:	ifnull	269
+   263:	aload_3
+   264:	invokeinterface	#35,  1; //InterfaceMethod java/sql/Connection.close:()V
+   269:	goto	302
+   272:	astore	13
+   274:	aload	9
+   276:	new	#15; //class StringBuffer
+   279:	dup
+   280:	invokespecial	#16; //Method java/lang/StringBuffer."<init>":()V
+   283:	ldc	#36; //String Fallo al desconectar SQL: 
+   285:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   288:	aload	13
+   290:	invokevirtual	#34; //Method java/sql/SQLException.getMessage:()Ljava/lang/String;
+   293:	invokevirtual	#18; //Method java/lang/StringBuffer.append:(Ljava/lang/String;)Ljava/lang/StringBuffer;
+   296:	invokevirtual	#19; //Method java/lang/StringBuffer.toString:()Ljava/lang/String;
+   299:	invokevirtual	#22; //Method java/io/PrintWriter.println:(Ljava/lang/String;)V
+   302:	ret	12
+   304:	return
+  Exception table:
+   from   to  target type
+    36   171   177   Class java/lang/ClassNotFoundException
+
+    36   171   213   Class java/sql/SQLException
+
+    36   174   249   any
+   177   210   249   any
+   213   246   249   any
+   249   254   249   any
+   259   269   272   Class java/sql/SQLException
+
+  LineNumberTable: 
+   line 16: 0
+   line 17: 2
+   line 18: 5
+   line 24: 8
+   line 25: 12
+   line 26: 16
+   line 29: 20
+   line 30: 28
+   line 34: 36
+   line 37: 42
+   line 40: 52
+   line 43: 66
+   line 44: 76
+   line 47: 105
+   line 50: 112
+   line 51: 122
+   line 55: 157
+   line 56: 164
+   line 58: 171
+   line 73: 174
+   line 58: 177
+   line 59: 179
+   line 61: 207
+   line 73: 210
+   line 61: 213
+   line 62: 215
+   line 64: 243
+   line 73: 246
+   line 67: 249
+   line 68: 259
+   line 69: 263
+   line 72: 269
+   line 70: 272
+   line 71: 274
+   line 72: 302
+   line 75: 304
+  Exceptions: 
+   throws javax/servlet/ServletException, java/io/IOException
+
+public void doPost(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse);
+   throws javax/servlet/ServletException, java/io/IOException
+  Code:
+   Stack=3, Locals=3, Args_size=3
+   0:	aload_0
+   1:	aload_1
+   2:	aload_2
+   3:	invokevirtual	#37; //Method doGet:(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V
+   6:	return
+  LineNumberTable: 
+   line 79: 0
+   line 80: 6
+  Exceptions: 
+   throws javax/servlet/ServletException, java/io/IOException
+
+}
+
